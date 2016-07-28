@@ -71,7 +71,7 @@ def mainFunc(request):
 		context0 = callTalkie(txt,context0)
 		
 		for en in context0:
-			context[en] = context0[en]
+			context[en] = str(context0[en])
 		context['output'] = str(userResp)
 	else:
 		context['error'] = "No input text to process"
