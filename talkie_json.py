@@ -62,16 +62,20 @@ def callTalkie(msgTxt,context):
 	return context
 
 def mainFunc(request):
+	context = {}
 	if 'input' in request:
 		txt = str(request['input'])
 		del request['input']
 	
 		context0 = request
 		context0 = callTalkie(txt,context0)
-		context0['output'] = str(userResp)
-		print context0
+		
+		for en in context0:
+			context[en] = context0[en]
+		context['output'] = str(userResp)
 	else:
-		print "Err: No input text to process"
+		context['error'] = "No input text to process"
+	print context
 
 if __name__ == "__main__":
 #	print('Reached Server...')
