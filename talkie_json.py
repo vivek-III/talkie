@@ -77,7 +77,7 @@ if __name__ == "__main__":
 #	print('Reached Server...')
 	
 	if len(sys.argv) != 2:
-		print('usage: python talkie_string.py <JSON>\n')
+		print('usage: python talkie_json.py "<JSON>"\n')
 		exit(1)
 	else:
 		jsonStr = sys.argv[1]
